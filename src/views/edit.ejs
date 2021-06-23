@@ -1,0 +1,35 @@
+<%- include("./partials/_header"); -%>
+
+<div class="container center">
+    <div class="row">
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form action="/edit/<%= task.id %>" method="POST">
+                <div class="form-group">
+                    <input type="text" name="solicitud" placeholder="SOLICITUD" class="form-control mb-2" value="<%= task.solicitud %>">
+                </div>
+                <div class="form-group">
+                 <input type="text" name="descripcion" placeholder="DESCRIPCION" class="form-control mb-2" value="<%= task.descripcion %>">
+                 </div>
+                 <div class="form-group">
+                     <input type="text" name="uso" placeholder="USO" class="form-control mb-2" value="<%= task.uso %>">
+                 </div>
+                 <div class="form-group mb-2">
+                     <select name="estado" name="estado" id="" value="<%= task.estado %>">
+                         <option selected class="mb-2">ESTADO</option>
+                         <option value="SOLICITADO">SOLICITADO</option>
+                         <option value="RECIBIDO">RECIBIDO</option>
+                         
+                     </select>
+                 </div>
+                 
+             <button type="submit" class="btn btn-primary btn-block mb-2">
+                 Actualizar
+             </button>
+            </form>
+        </div>
+     </div>
+ </div>  
+</div>
+</div>
