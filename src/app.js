@@ -1,17 +1,16 @@
 const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
-const mongoose = require("mongoose");
+const MongoClient = require("mongoose");
 
 const app = express();
 
 // connecting to db
 
-mongoose
-  .connect("mongodb://localhost/dbbodega", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+MongoClient.connect("mongodb://localhost/dbbodega", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then((db) => console.log("DB conected"))
   .catch((err) => console.log(err));
 
